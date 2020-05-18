@@ -10,7 +10,7 @@ public class Model {
 
     private List<Integer> list = Arrays.asList(0,0,0);
 
-    public int getElementValueAtIndex(int index){
+    int getElementValueAtIndex(int index){
         if(index < 0 || index > list.size()) {
             Log.e(TAG, "index " + index + " out of bound");
             return 0;
@@ -18,7 +18,7 @@ public class Model {
         return list.get(index);
     }
 
-    public void setElementValueAtIndex(int index, int value){
+    void setElementValueAtIndex(int index, int value){
         if(index < 0 || index > list.size()) {
             Log.e(TAG, "index " + index + " out of bound");
             return;
@@ -26,7 +26,7 @@ public class Model {
         list.set(index, value);
     }
 
-    public int getElementsCount(){
+    int getElementsCount(){
         return list.size();
     }
 }

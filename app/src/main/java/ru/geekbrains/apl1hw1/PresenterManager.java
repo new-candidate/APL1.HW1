@@ -18,7 +18,7 @@ public class PresenterManager {
         }
         return instance;
     }
-    Map<Long, Presenter> presenterMap = new HashMap<>();
+    private Map<Long, Presenter> presenterMap = new HashMap<>();
 
     void savePresenter(Presenter presenter, Bundle bundle){
         Long id = currentId.incrementAndGet();
