@@ -1,16 +1,16 @@
 package ru.geekbrains.apl1hw1;
 
-public class Presenter {
+class Presenter {
 
     private Model model = new Model();
     private MainView view;
 
-    public void bindView(MainView view){
+    void bindView(MainView view){
         this.view = view;
         updateView();
     }
 
-    public void unbindView(MainView view)
+    void unbindView(MainView view)
     {
         if(view == this.view) this.view = null;
     }
@@ -23,7 +23,7 @@ public class Presenter {
         }
     }
 
-    public void buttonClick(int index){
+    void buttonClick(int index){
         if(model == null) return;
         int newModelValue = model.getElementValueAtIndex(index) + 1;
         model.setElementValueAtIndex(index, newModelValue);

@@ -12,7 +12,7 @@ public class PresenterManager {
 
     private final AtomicLong currentId = new AtomicLong();
 
-    public static PresenterManager getInstance() {
+    static PresenterManager getInstance() {
         if (instance == null) {
             instance = new PresenterManager();
         }
@@ -20,13 +20,13 @@ public class PresenterManager {
     }
     Map<Long, Presenter> presenterMap = new HashMap<>();
 
-    public void savePresenter(Presenter presenter, Bundle bundle){
+    void savePresenter(Presenter presenter, Bundle bundle){
         Long id = currentId.incrementAndGet();
         presenterMap.put(id, presenter);
         bundle.putLong(PRESENTER_ID, id);
     }
 
-    public Presenter restorePresenter(Bundle bundle){
+    Presenter restorePresenter(Bundle bundle){
         long id = bundle.getLong(PRESENTER_ID, -1);
 
         if(!presenterMap.containsKey(id)) return new Presenter();
